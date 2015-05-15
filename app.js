@@ -84,7 +84,8 @@ function restrict(req, res, next) {
 }                                 
 
 app.get('/', function(req, res){  
-  res.redirect('login');          
+  //res.redirect('login');
+  res.render('index');
 });                               
 
 app.get('/restricted', restrict, function(req, res){        
@@ -101,7 +102,7 @@ app.get('/logout', function(req, res){
 
 app.get('/login', function(req, res){                       
   res.render('login');            
-});                               
+});
 
 app.post('/login', function(req, res){                      
   authenticate(req.body.userName, req.body.password, function(err, user){
@@ -118,7 +119,7 @@ app.post('/login', function(req, res){
           + ' You may now access <a href="/restricted">/restricted</a>.';
 
 		res.locals.session = req.session;
-        res.redirect('back');     
+        res.render('index');
       });                         
     } else {                      
       req.session.error = 'Authentication failed, please check your '                         
