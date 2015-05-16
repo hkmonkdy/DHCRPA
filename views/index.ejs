@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>家庭傭工續約平台 - 控制台 (DHCRPA)</title>
 
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
@@ -16,6 +16,7 @@
     <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
     <link href="/bower_components/morrisjs/morris.css" rel="stylesheet">
     <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,6 +24,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+	<style type="text/css">
+		.clickable-row:hover {
+			cursor: pointer;
+		}
+	</style>
 </head>
 
 <body>
@@ -78,91 +85,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="/" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+						<li>
+                            <a href="applications"><i class="fa fa-file fa-fw"></i> Applications</a>
                         </li>
                     </ul>
                 </div>
@@ -252,71 +178,39 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i>
-							Bar Chart Example
+                            <i class="fa fa-search fa-fw"></i>
+							Inquiried Applications
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered table-hover table-striped">
+                                        <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>#</th>
-                                                    <th>Date</th>
-                                                    <th>Time</th>
-                                                    <th>Amount</th>
+                                                    <th class="col-lg-2">Application #</th>
+													<th class="col-lg-3">Employer Name</th>
+													<th class="col-lg-3">Last Inquiry Time</th>
+                                                    <th class="col-lg-3">Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                <tr class='clickable-row' data-href='#'>
                                                     <td>3326</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>3:29 PM</td>
-                                                    <td>$321.33</td>
+                                                    <td>Andy Wong</td>
+													<td>10/21/2013 3:29 PM</td>
+                                                    <td>
+														<a href="#" id="status1" data-type="select" data-pk="1" data-url="/post" data-title="Update Status">1 - Submitted</a>
+													</td>
                                                 </tr>
-                                                <tr>
+                                                <tr class='clickable-row' data-href='#'>
                                                     <td>3325</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>3:20 PM</td>
-                                                    <td>$234.34</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3324</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>3:03 PM</td>
-                                                    <td>$724.17</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3323</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>3:00 PM</td>
-                                                    <td>$23.71</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3322</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>2:49 PM</td>
-                                                    <td>$8345.23</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3321</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>2:23 PM</td>
-                                                    <td>$245.12</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3320</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>2:15 PM</td>
-                                                    <td>$5663.54</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3319</td>
-                                                    <td>10/21/2013</td>
-                                                    <td>2:13 PM</td>
-                                                    <td>$943.45</td>
+                                                    <td>Jevons</td>
+													<td>10/21/2013 3:20 PM</td>
+                                                    <td>
+														<a href="#" id="status2" data-type="select" data-pk="1" data-url="/post" data-title="Update Status">3 - Confirmed</a>
+													</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -402,8 +296,43 @@
     <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
     <script src="/bower_components/raphael/raphael-min.js"></script>
     <script src="/bower_components/morrisjs/morris.min.js"></script>
-    <script src="/js/morris-data.js"></script>
+    <!--<script src="/js/morris-data.js"></script>-->
     <script src="/dist/js/sb-admin-2.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+	
+	<script>
+		$(".clickable-row").click(function() {
+			window.document.location = $(this).data("href");
+		});
+		
+		$.fn.editable.defaults.mode = 'inline';
+		
+		$(document).ready(function() {
+			$('#status1').editable({
+				value: 1,    
+				source: [
+				  {value: 1, text: '1 - Submitted'},
+				  {value: 2, text: '2 - Confirmation Sent'},
+				  {value: 3, text: '3 - Confirmed'},
+				  {value: 4, text: '4 - Document Sent'},
+				  {value: 5, text: '5 - Signed'},
+				  {value: 6, text: '6 - Completed'}
+			   ]
+			});
+			
+			$('#status2').editable({
+				value: 3,    
+				source: [
+				  {value: 1, text: '1 - Submitted'},
+				  {value: 2, text: '2 - Confirmation Sent'},
+				  {value: 3, text: '3 - Confirmed'},
+				  {value: 4, text: '4 - Document Sent'},
+				  {value: 5, text: '5 - Signed'},
+				  {value: 6, text: '6 - Completed'}
+			   ]
+			});
+		});
+	</script>
 </body>
 
 </html>

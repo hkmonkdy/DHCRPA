@@ -81,15 +81,11 @@ function restrict(req, res, next) {
     req.session.error = 'Access denied!';                   
     res.redirect('/login');       
   }                               
-}                                 
+}                                             
 
-app.get('/', function(req, res){  
-  //res.redirect('login');
+//app.get('/', restrict, function(req, res){
+app.get('/', function(req, res){
   res.render('index');
-});                               
-
-app.get('/restricted', restrict, function(req, res){        
-  res.send('Wahoo! restricted area, click to <a href="/logout">logout</a>');                  
 });                               
 
 app.get('/logout', function(req, res){                      
@@ -128,8 +124,19 @@ app.post('/login', function(req, res){
       res.redirect('login');      
     }                             
   });                             
-});                               
+});
 
+app.get('/index', function(req, res){                      
+    res.redirect('/');
+});  
+
+app.get('/applications', function(req, res){                       
+  res.render('applications');
+});
+
+app.get('/application', function(req, res){                       
+  res.render('application');
+});
 
 app.listen(3001);                   
 console.log('Express started on port ' + 3001);
