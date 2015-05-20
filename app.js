@@ -152,5 +152,9 @@ app.get('/inquiries', function(req, res){
   res.render('inquiries');
 });
 
+app.get('/inquiry', function(req, res){                       
+  res.render('inquiry');
+});
+
 app.listen(3001);                   
 console.log('Express started on port ' + 3001);
