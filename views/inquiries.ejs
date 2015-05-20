@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>家庭傭工續約平台 - 控制台 > 申請總覽</title>
+    <title>家庭傭工續約平台 - 控制台 > 查詢總覽</title>
 
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">\
@@ -86,10 +86,10 @@
                             <a href="index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 						<li>
-                            <a href="applications" class="active"><i class="fa fa-file fa-fw"></i> Applications</a>
+                            <a href="applications"><i class="fa fa-file fa-fw"></i> Applications</a>
                         </li>
 						<li>
-                            <a href="inquiries"><i class="fa fa-envelope fa-fw"></i> Inquiries</a>
+                            <a href="inquiries" class="active"><i class="fa fa-envelope fa-fw"></i> Inquiries</a>
                         </li>
                     </ul>
                 </div>
@@ -103,7 +103,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Applications</h1>
+                        <h1 class="page-header">Inquiries</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -111,18 +111,16 @@
 				<div class="row">
 					<form method="post" action="searchApplications">
 						<div class="col-lg-2">
-							<input type="text" class="form-control" placeholder="Application #">
+							<input type="text" class="form-control" placeholder="Inquiry #">
 						</div>
 						<div class="col-lg-2">
-							<select class="form-control">
-								<option>All Status</option>
-								<option>1 - Submitted</option>
-								<option>2 - Confirmation Sent</option>
-								<option>3 - Confirmed</option>
-								<option>4 - Document Sent</option>
-								<option>5 - Signed</option>
-								<option>6 - Completed</option>
-							</select>
+							<input type="text" class="form-control" placeholder="E-mail">
+						</div>
+						<div class="col-lg-2">
+							<input type="text" class="form-control" placeholder="Contact Number">
+						</div>
+						<div class="col-lg-2">
+							<input type="text" class="form-control" placeholder="Name/Title/Content">
 						</div>
 						<div class="col-lg-2">
 							<input type="submit" value="Search" class="btn btn-primary"/>
@@ -149,28 +147,24 @@
 									<table class="table table-hover">
 										<thead>
 											<tr>
-												<th class="col-lg-2">Application #</th>
-												<th class="col-lg-4">Employer Name</th>
-												<th class="col-lg-3">Last updated Time</th>
-												<th class="col-lg-3">Status</th>
+												<th class="col-lg-1">Inquiry #</th>
+												<th class="col-lg-4">Title</th>
+												<th class="col-lg-3">Name</th>
+												<th class="col-lg-2">Inquiry Time</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td class='clickable-row' data-href='application'>3326</td>
-												<td class='clickable-row' data-href='application'>Andy Wong</td>
-												<td class='clickable-row' data-href='application'>10/21/2013 3:29 PM</td>
-												<td>
-													<a href="#" id="status1" data-type="select" data-pk="1" data-url="/post" data-title="Update Status">1 - Submitted</a>
-												</td>
+											<tr class='clickable-row' data-href='application'>
+												<td>11</td>
+												<td>Inquiry about price</td>
+												<td>Ms. Leung</td>
+												<td>10/21/2013 3:29 PM</td>
 											</tr>
-											<tr>
-												<td class='clickable-row' data-href='application'>3325</td>
-												<td class='clickable-row' data-href='application'>Jevons</td>
-												<td class='clickable-row' data-href='application'>10/21/2013 3:20 PM</td>
-												<td>
-													<a href="#" id="status2" data-type="select" data-pk="1" data-url="/post" data-title="Update Status">3 - Confirmed</a>
-												</td>
+											<tr class='clickable-row' data-href='application'>
+												<td>10</td>
+												<td>Processing Timing</td>
+												<td>Peter Chan</td>
+												<td>10/21/2013 3:20 PM</td>
 											</tr>
 										</tbody>
 									</table>

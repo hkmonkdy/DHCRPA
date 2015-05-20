@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">DHCP Admin Console</a>
+                <a class="navbar-brand" href="index">DHCP Admin Console</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -74,10 +74,10 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
-                            <form class="input-group custom-search-form">
+                            <form class="input-group custom-search-form" method="post" action="searchApplications">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-									<button class="btn btn-default" type="button">
+									<button class="btn btn-default" type="button" onclick="form.submit();">
 										<i class="fa fa-search"></i>
 									</button>
 								</span>
@@ -89,6 +89,9 @@
                         </li>
 						<li>
                             <a href="applications"><i class="fa fa-file fa-fw"></i> Applications</a>
+                        </li>
+						<li>
+                            <a href="inquiries"><i class="fa fa-envelope fa-fw"></i> Inquiries</a>
                         </li>
                     </ul>
                 </div>
@@ -119,7 +122,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="applications">
                             <div class="panel-footer">
                                 <span class="pull-left">View Applications</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -141,7 +144,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="applications">
                             <div class="panel-footer">
                                 <span class="pull-left">View Applications</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -163,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="applications">
                             <div class="panel-footer">
                                 <span class="pull-left">View Applications</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -196,20 +199,20 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class='clickable-row' data-href='#'>
-                                                    <td>3326</td>
-                                                    <td>Andy Wong</td>
-													<td>10/21/2013 3:29 PM</td>
+                                                <tr>
+                                                    <td class='clickable-row' data-href='application'>3326</td>
+                                                    <td class='clickable-row' data-href='application'>Andy Wong</td>
+													<td class='clickable-row' data-href='application'>10/21/2013 3:29 PM</td>
                                                     <td>
-														<a href="#" id="status1" data-type="select" data-pk="1" data-url="/post" data-title="Update Status">1 - Submitted</a>
+														<a href="#" id="status1" data-type="select" data-pk="1" data-url="/updateApplicationStatus" data-title="Update Status">1 - Submitted</a>
 													</td>
                                                 </tr>
-                                                <tr class='clickable-row' data-href='#'>
-                                                    <td>3325</td>
-                                                    <td>Jevons</td>
-													<td>10/21/2013 3:20 PM</td>
+                                                <tr>
+                                                    <td class='clickable-row' data-href='application'>3325</td>
+                                                    <td class='clickable-row' data-href='application'>Jevons</td>
+													<td class='clickable-row' data-href='application'>10/21/2013 3:20 PM</td>
                                                     <td>
-														<a href="#" id="status2" data-type="select" data-pk="1" data-url="/post" data-title="Update Status">3 - Confirmed</a>
+														<a href="#" id="status2" data-type="select" data-pk="1" data-url="/updateApplicationStatus" data-title="Update Status">3 - Confirmed</a>
 													</td>
                                                 </tr>
                                             </tbody>
@@ -264,10 +267,10 @@
                                 </li>
                             </ul>
 							
-							<a href="#" class="btn btn-default btn-block">View All Inquiries</a>
+							<a href="inquiries" class="btn btn-default btn-block">View All Inquiries</a>
                         </div>
                         <!-- /.panel-body -->
-						
+						<!--
                         <div class="panel-footer">
                             <div class="input-group">
                                 <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
@@ -278,6 +281,7 @@
                                 </span>
                             </div>
                         </div>
+						-->
                         <!-- /.panel-footer -->
                     </div>
                     <!-- /.panel .chat-panel -->

@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 //var hash = require('./pass').hash;
 
+//var controllerMongoDB = require('./controllers/mongoDB');
+
 var app = module.exports = express();
 
 // config                         
@@ -136,6 +138,18 @@ app.get('/applications', function(req, res){
 
 app.get('/application', function(req, res){                       
   res.render('application');
+});
+
+app.post('/updateApplicationStatus', function(req, res){                       
+  res.sendStatus(200);
+});
+
+app.post('/searchApplications', function(req, res){                       
+  res.render('applications');
+});
+
+app.get('/inquiries', function(req, res){                       
+  res.render('inquiries');
 });
 
 app.listen(3001);                   
