@@ -33,8 +33,8 @@ app.use(function(req, res, next){
   delete req.session.success;
 
   res.locals.message = '';        
-  if (err) res.locals.message = '<p class="msg error">' + err + '</p>';
-  if (msg) res.locals.message = '<p class="msg success">' + msg + '</p>';
+  if (err) res.locals.message = err;
+  if (msg) res.locals.message = '';
  
   next();                         
 });                               
@@ -42,7 +42,7 @@ app.use(function(req, res, next){
 // dummy database                 
 
 var users = {                     
-  tj: { name: 'tj' }              
+  jevons: { name: 'jevons' }              
 };                                
 
 // when you create a user, generate a salt                  
@@ -62,31 +62,37 @@ hash('foobar', function(err, salt, hash){
 
 function authenticate(name, pass, fn) {                     
   if (!module.parent) console.log('authenticating %s:%s', name, pass);
-  var user = users[name];         
-  // query the db for the given username                    
-  if (!user) return fn(new Error('cannot find user'));      
+  var user = users[name.toLowerCase()];
+  // query the db for the given username
+  if (!user) return fn(new Error('cannot find user'));
   // apply the same algorithm to the POSTed password, applying the hash against the pass / salt, if there is a match we found the user
   /*
-  hash(pass, user.salt, function(err, hash){                
-    if (err) return fn(err);      
+  hash(pass, user.salt, function(err, hash){
+    if (err) return fn(err);
     if (hash.toString() == user.hash) return fn(null, user);
-    fn(new Error('invalid password'));                      
+    fn(new Error('invalid password'));
   })
   */
-  return fn(null, user);
+  
+  console.log("pass");
+  if(pass != "dhcrp"){
+	fn(new Error('invalid password'));
+  }else{
+	return fn(null, user);
+  }
 }                                 
 
 function restrict(req, res, next) {                         
   if (req.session.user) {         
     next();                       
   } else {                        
-    req.session.error = 'Access denied!';                   
+    //req.session.error = 'Access denied!';                   
     res.redirect('/login');       
   }                               
 }                                             
 
-//app.get('/', restrict, function(req, res){
-app.get('/', function(req, res){
+app.get('/', restrict, function(req, res){
+//app.get('/', function(req, res){
   res.render('index');
 });                               
 
@@ -94,12 +100,12 @@ app.get('/logout', function(req, res){
   // destroy the user's session to log them out             
   // will be re-created next request                        
   req.session.destroy(function(){ 
-    res.redirect('/');            
+    res.redirect('/');
   });                             
 });                               
 
 app.get('/login', function(req, res){                       
-  res.render('login');            
+  res.render('login');
 });
 
 app.post('/login', function(req, res){                      
@@ -121,8 +127,7 @@ app.post('/login', function(req, res){
       });                         
     } else {                      
       req.session.error = 'Authentication failed, please check your '                         
-        + ' username and password.'                         
-        + ' (use "tj" and "foobar")';                       
+        + ' username and password.';                       
       res.redirect('login');      
     }                             
   });                             
