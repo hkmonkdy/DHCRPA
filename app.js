@@ -3,9 +3,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-//var hash = require('./pass').hash;
 
-//var controllerMongoDB = require('./controllers/mongoDB');
+var routeIndex = require('./routes/index');
+var routeApplications = require('./routes/applications');
+var routeApplication = require('./routes/application');
+
+var controllerMongoDB = require('./controllers/mongoDB');
 
 var app = module.exports = express();
 
@@ -89,12 +92,7 @@ function restrict(req, res, next) {
     //req.session.error = 'Access denied!';                   
     res.redirect('/login');       
   }                               
-}                                             
-
-app.get('/', restrict, function(req, res){
-//app.get('/', function(req, res){
-  res.render('index');
-});                               
+}                                                                         
 
 app.get('/logout', function(req, res){                      
   // destroy the user's session to log them out             
@@ -133,16 +131,14 @@ app.post('/login', function(req, res){
   });                             
 });
 
-app.get('/index', function(req, res){                      
-    res.redirect('/');
-});  
+
 
 app.get('/applications', function(req, res){                       
-  res.render('applications');
+  routeApplications.applications(req, res, controllerMongoDB);
 });
 
 app.get('/application', function(req, res){                       
-  res.render('application');
+  routeApplication.application(req, res, controllerMongoDB);
 });
 
 app.post('/updateApplicationStatus', function(req, res){                       
@@ -150,7 +146,7 @@ app.post('/updateApplicationStatus', function(req, res){
 });
 
 app.post('/searchApplications', function(req, res){                       
-  res.render('applications');
+  routeApplication.application(req, res, controllerMongoDB);
 });
 
 app.get('/inquiries', function(req, res){                       
@@ -160,6 +156,15 @@ app.get('/inquiries', function(req, res){
 app.get('/inquiry', function(req, res){                       
   res.render('inquiry');
 });
+
+app.get('/index', function(req, res){                      
+    res.redirect('/');
+});  
+
+//app.get('/', restrict, function(req, res, controllerMongoDB){
+app.get('/', function(req, res){
+  routeIndex.index(req, res, controllerMongoDB);
+});   
 
 app.listen(3001);                   
 console.log('Express started on port ' + 3001);

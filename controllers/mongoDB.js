@@ -5,12 +5,36 @@ var Application = require('../models/application');
 var ApplicationInquiry = require('../models/application_inquiry');
 var GeneralInquiry = require('../models/general_inquiry');
 
-const APPLICATION_STATUS_NOT_SUBMITTED = 1;
+const APPLICATION_STATUS_NOT_SUBMITTED = 0;
+const APPLICATION_STATUS_SUBMITTED = 1;
+const APPLICATION_STATUS_EMAIL_SENT = 2;
+const APPLICATION_STATUS_CONFIRMED = 3;
+const APPLICATION_STATUS_DOCUMENT_SENT = 4;
+const APPLICATION_STATUS_SIGNED = 5;
+const APPLICATION_STATUS_COMPLETED = 6;
 
 module.exports = {
 	getApplication: function (applicationId, next) {
 		Application.findOne({ _id: applicationId }, function (err, dbApplication) {
 			return next(err, dbApplication);
+		});
+	},
+	
+	getApplications: function (next) {
+		Application.find({ }, function (err, dbApplications) {
+			return next(err, dbApplications);
+		});
+	},
+	
+	getApplicationsByStatus: function (statusId, next) {
+		Application.find({ statusId: statusId }, function (err, dbApplications) {
+			return next(err, dbApplications);
+		});
+	},
+	
+	getInquiriedApplications: function (recordLimit, next) {
+		ApplicationInquiry.find({ }, function (err, dbApplicationInquiries) {
+			return next(err, dbApplicationInquiries);
 		});
 	},
 	
@@ -45,27 +69,15 @@ module.exports = {
 		}
 	},
 	
-	createApplicationInquiry: function (submittedApplicationInquiry, next) {
-		var newApplicationInquiry = new ApplicationInquiry();
-
-		newApplicationInquiry.queryInformation = submittedApplicationInquiry.queryInformation;
-		
-		newApplicationInquiry.save(function (err) {
-			return next(err, newApplicationInquiry);
+	getGeneralInquiry: function (generalInquiryId, next) {
+		GeneralInquiry.findOne({ _id: generalInquiryId }, function (err, dbGeneralInquiry) {
+			return next(err, dbGeneralInquiry);
 		});
 	},
 	
-	createGeneralInquiry: function (submittedGeneralInquiry, next) {
-		var newGeneralInquiry = new GeneralInquiry();
-
-		newGeneralInquiry.name = submittedGeneralInquiry.name;
-		newGeneralInquiry.contactNumber = submittedGeneralInquiry.contactNumber;
-		newGeneralInquiry.email = submittedGeneralInquiry.email;
-		newGeneralInquiry.title = submittedGeneralInquiry.title;
-		newGeneralInquiry.content = submittedGeneralInquiry.content;
-		
-		newGeneralInquiry.save(function (err) {
-			return next(err, newGeneralInquiry);
+	getGeneralInquiries: function (recordLimit, next) {
+		GeneralInquiry.find({  }, function (err, dbGeneralInquiry) {
+			return next(err, dbGeneralInquiry);
 		});
 	}
 }

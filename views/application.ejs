@@ -103,7 +103,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Application - 3325</h1>
+                        <h1 class="page-header">Application <span style="font-size: 16px"><i>[<%= application._id %>]</i></span></h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -152,21 +152,21 @@
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="firstName">姓名(英)</label>  
 										  <div class="col-md-1">
-											<input id="firstName" name="firstName" type="text" placeholder="名*" class="form-control input-md" required="">
+											<input id="firstName" name="firstName" type="text" placeholder="名*" class="form-control input-md" required="" value="<%= application.employer.firstName %>">
 										  </div>
 										  
 										  <div class="col-md-1">
-											<input id="lastName" name="lastName" type="text" placeholder="姓*" class="form-control input-md" required="">
+											<input id="lastName" name="lastName" type="text" placeholder="姓*" class="form-control input-md" required="" value="<%= application.employer.lastName %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="chineseName">姓名(中)</label>  
 										  <div class="col-md-2">
-											<input id="chineseName" name="chineseName" type="text" placeholder="" class="form-control input-md">
+											<input id="chineseName" name="chineseName" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.chineseName %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="DOB">出生日期</label>  
 										  <div class="col-md-2">
-											<input id="DOB" name="DOB" type="text" placeholder="" class="form-control input-md">
+											<input id="DOB" name="DOB" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.DOB %>">
 										  </div>
 										</div>
 
@@ -182,12 +182,12 @@
 										  
 										  <label class="col-md-1 control-label" for="nationality">國籍</label>  
 										  <div class="col-md-2">
-											<input id="nationality" name="nationality" type="text" placeholder="" class="form-control input-md">
+											<input id="nationality" name="nationality" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.nationality %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="occupation">職業</label>  
 										  <div class="col-md-2">
-											<input id="occupation" name="occupation" type="text" placeholder="" class="form-control input-md">
+											<input id="occupation" name="occupation" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.occupation %>">
 										  </div>
 										</div>
 
@@ -203,43 +203,43 @@
 										
 										  <label class="col-md-1 control-label" for="HKID">身份證號碼</label>  
 										  <div class="col-md-2">
-											<input id="HKID" name="HKID" type="text" placeholder="" class="form-control input-md">
+											<input id="HKID" name="HKID" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.HKID %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="passportNumber">旅行證件號碼</label>  
 										  <div class="col-md-2">
-											<input id="passportNumber" name="passportNumber" type="text" placeholder="" class="form-control input-md">
+											<input id="passportNumber" name="passportNumber" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.passportNumber %>">
 										  </div>
 										</div>
 
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="address1">地址</label>  
 										  <div class="col-md-8">
-											<input id="address1" name="address1" type="text" placeholder="地址 1" class="form-control input-md">
+											<input id="address1" name="address1" type="text" placeholder="地址 1" class="form-control input-md" value="<%= application.employer.address1 %>">
 										  </div>
 										</div>
 
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="address2"></label>  
 										  <div class="col-md-8">
-											<input id="address2" name="address2" type="text" placeholder="地址 2" class="form-control input-md">
+											<input id="address2" name="address2" type="text" placeholder="地址 2" class="form-control input-md" value="<%= application.employer.address2 %>">
 										  </div>
 										</div>
 
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="contactNumber">聯絡電話號碼*</label>  
 										  <div class="col-md-2">
-											<input id="contactNumber" name="contactNumber" type="text" placeholder="" class="form-control input-md" required="">
+											<input id="contactNumber" name="contactNumber" type="text" placeholder="" class="form-control input-md" required="" value="<%= application.employer.contactNumber %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="homeNumber">住宅電話號碼</label>  
 										  <div class="col-md-2">
-											<input id="homeNumber" name="homeNumber" type="text" placeholder="" class="form-control input-md">
+											<input id="homeNumber" name="homeNumber" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.homeNumber %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="email">電郵地址*</label>  
 										  <div class="col-md-2">
-											<input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
+											<input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="" value="<%= application.employer.email %>">
 										  </div>
 										</div>
 									</fieldset><br/>
@@ -260,41 +260,41 @@
 										  
 										  <label class="col-md-2 control-label" for="houseHoldIncome">每月家庭入息</label>  
 										  <div class="col-md-1">
-											<input id="houseHoldIncome" name="houseHoldIncome" type="text" placeholder="HKD" class="form-control input-md">
+											<input id="houseHoldIncome" name="houseHoldIncome" type="text" placeholder="HKD" class="form-control input-md" value="<%= application.employer.houseHoldIncome %>">
 										  </div>
 										</div>
 
 										<div class="col-md-12">
 										  <label class="col-md-2 control-label" for="numOfAdult">成人數目</label>  
 										  <div class="col-md-1">
-											<input id="numOfAdult" name="numOfAdult" type="text" placeholder="" class="form-control input-md">
+											<input id="numOfAdult" name="numOfAdult" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.numOfAdult %>">
 										  </div>
 										  
 										  <label class="col-md-2 control-label" for="numOfChild">小童數目(5-18歲)</label>  
 										  <div class="col-md-1">
-											<input id="numOfChild" name="numOfChild" type="text" placeholder="" class="form-control input-md">
+											<input id="numOfChild" name="numOfChild" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.numOfChild %>">
 										  </div>
 										  
 										  <label class="col-md-2 control-label" for="numOfBaby">小童數目(0~5歲)</label>  
 										  <div class="col-md-1">
-											<input id="numOfBaby" name="numOfBaby" type="text" placeholder="" class="form-control input-md">
+											<input id="numOfBaby" name="numOfBaby" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.numOfBaby %>">
 										  </div>
 										</div>
 
 										<div class="col-md-12">
 										  <label class="col-md-2 control-label" for="numOfPreBorn">預產嬰兒數目</label>  
 										  <div class="col-md-1">
-											<input id="numOfPreBorn" name="numOfPreBorn" type="text" placeholder="" class="form-control input-md">
+											<input id="numOfPreBorn" name="numOfPreBorn" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.numOfPreBorn %>">
 										  </div>
 										  
 										  <label class="col-md-2 control-label" for="numOfFamily">家庭成員總數</label>  
 										  <div class="col-md-1">
-											<input id="numOfFamily" name="numOfFamily" type="text" placeholder="" class="form-control input-md">
+											<input id="numOfFamily" name="numOfFamily" type="text" placeholder="" class="form-control input-md" value="<%= (parseInt(application.employer.numOfAdult) + parseInt(application.employer.numOfChild) + parseInt(application.employer.numOfBaby)) %>">
 										  </div>
 										  
 										  <label class="col-md-2 control-label" for="numOfSpecialCare">其中特別照顧人士數目</label>  
 										  <div class="col-md-1">
-											<input id="numOfSpecialCare" name="numOfSpecialCare" type="text" placeholder="" class="form-control input-md">
+											<input id="numOfSpecialCare" name="numOfSpecialCare" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.numOfSpecialCare %>">
 										  </div>
 										</div>
 										
@@ -373,7 +373,7 @@
 										<div class="col-md-12">
 										  <label class="col-md-2 control-label" for="numOfDH">現時僱用家傭總數</label>  
 										  <div class="col-md-1">
-											<input id="numOfDH" name="numOfDH" type="text" placeholder="" class="form-control input-md">
+											<input id="numOfDH" name="numOfDH" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.numOfDH %>">
 										  </div>
 										</div>
 										
@@ -452,7 +452,7 @@
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="apartmentType">住宅類型</label>
 										  <div class="col-md-2">
-											<select class="form-control" id="apartmentType" name="apartmentType">
+											<select class="form-control" id="apartmentType" name="apartmentType" value="<%= application.employer.apartmentTypeId %>">
                                                 <option value="1">Option one</option>
 												<option value="2">Option two</option>
                                             </select>
@@ -460,13 +460,13 @@
 										  
 										  <label class="col-md-1 control-label" for="apartmentArea">住宅面積</label>  
 										  <div class="col-md-2">
-											<input id="apartmentArea" name="apartmentArea" type="text" placeholder="平方尺" class="form-control input-md">
+											<input id="apartmentArea" name="apartmentArea" type="text" placeholder="平方尺" class="form-control input-md" value="<%= application.employer.apartmentArea %>">
 											
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="numOfRoom">睡房總數目</label>  
 										  <div class="col-md-2">
-											<input id="numOfRoom" name="numOfRoom" type="text" placeholder="" class="form-control input-md">
+											<input id="numOfRoom" name="numOfRoom" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.numOfRoom %>">
 										  </div>
 										</div>
 
@@ -482,7 +482,7 @@
 										  
 										  <label class="col-md-1 control-label" for="DHRoomArea">工人房間面積</label>  
 										  <div class="col-md-2">
-										  <input id="DHRoomArea" name="DHRoomArea" type="text" placeholder="平方尺" class="form-control input-md">
+										  <input id="DHRoomArea" name="DHRoomArea" type="text" placeholder="平方尺" class="form-control input-md" value="<%= application.employer.DHRoomArea %>">
 											
 										  </div>
 										</div>
@@ -498,22 +498,22 @@
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="firstName">姓名</label>  
 										  <div class="col-md-2">
-											<input id="firstName" name="firstName" type="text" placeholder="First Name*" class="form-control input-md" required="">
+											<input id="firstName" name="firstName" type="text" placeholder="First Name*" class="form-control input-md" required="" value="<%= application.domesticHelper.firstName %>"/>
 										  </div>
 										  
 										  <div class="col-md-2">
-											<input id="middleName" name="middleName" type="text" placeholder="Middle Name" class="form-control input-md">
+											<input id="middleName" name="middleName" type="text" placeholder="Middle Name" class="form-control input-md" value="<%= application.domesticHelper.middleName %>">
 										  </div>
 										  
 										  <div class="col-md-2">
-											<input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md">
+											<input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md" value="<%= application.domesticHelper.lastName %>">
 										  </div>
 										</div>
 										
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="DOB">出生日期</label>  
 										  <div class="col-md-2">
-											<input id="DOB" name="DOB" type="text" placeholder="" class="form-control input-md"/>
+											<input id="DOB" name="DOB" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.DOB %>"/>
 										  </div>
 
 										  <label class="col-md-1 control-label" for="gender">性別</label>
@@ -527,7 +527,7 @@
 
 										  <label class="col-md-1 control-label" for="birthPlace">出生地</label>
 										  <div class="col-md-2">
-											<input id="birthPlace" name="birthPlace" type="text" placeholder="" class="form-control input-md">
+											<input id="birthPlace" name="birthPlace" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.birthPlace %>">
 										  </div>
 										</div>
 										  
@@ -535,7 +535,7 @@
 										  <label class="col-md-1 control-label" for="maritalStatus">婚姻狀況</label>
 										  <div class="col-md-2">
 											<div class="select-wrapper">
-												<select id="maritalStatus" name="maritalStatus">
+												<select id="maritalStatus" name="maritalStatus" value="<%= application.domesticHelper.maritalStatusId %>">
 												  <option value="1">Option one</option>
 												  <option value="2">Option two</option>
 												</select>
@@ -544,55 +544,55 @@
 										
 										  <label class="col-md-1 control-label" for="HKID">身份證號碼*</label>  
 										  <div class="col-md-2">
-											<input id="HKID" name="HKID" type="text" placeholder="" class="form-control input-md" required="">
+											<input id="HKID" name="HKID" type="text" placeholder="" class="form-control input-md" required="" value="<%= application.domesticHelper.HKID %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="HKIDIssueDate">身份證簽發日期</label>  
 										  <div class="col-md-2">
-											<input id="HKIDIssueDate" name="HKIDIssueDate" type="text" placeholder="" class="form-control input-md"/>
+											<input id="HKIDIssueDate" name="HKIDIssueDate" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.HKIDIssueDate %>"/>
 										  </div>
 										</div>
 
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="nationality">國籍</label>  
 										  <div class="col-md-2">
-											<input id="nationality" name="nationality" type="text" placeholder="" class="form-control input-md"/>
+											<input id="nationality" name="nationality" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.nationality %>"/>
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="contactNumber">電話號碼</label>  
 										  <div class="col-md-2">
-											<input id="contactNumber" name="contactNumber" type="text" placeholder="" class="form-control input-md">
+											<input id="contactNumber" name="contactNumber" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.contactNumber %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="email">電郵地址</label>  
 										  <div class="col-md-2">
-											<input id="email" name="email" type="text" placeholder="" class="form-control input-md"/>
+											<input id="email" name="email" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.email %>"/>
 										  </div>
 										</div>
 									
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="address1">原居住址</label>  
 										  <div class="col-md-8">
-											<input id="address1" name="address1" type="text" placeholder="地址 1" class="form-control input-md"/>
+											<input id="address1" name="address1" type="text" placeholder="地址 1" class="form-control input-md" value="<%= application.domesticHelper.address1 %>"/>
 										  </div>
 										</div>
 										
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label"></label>  
 										  <div class="col-md-8">
-											<input id="address2" name="address2" type="search" placeholder="地址 2" class="form-control input-md"/>
+											<input id="address2" name="address2" type="search" placeholder="地址 2" class="form-control input-md" value="<%= application.domesticHelper.address2 %>"/>
 										  </div>
 										</div>
 
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="contactPerson">國家親人姓名</label>  
 										  <div class="col-md-2">
-											<input id="contactPerson" name="contactPerson" type="text" placeholder="" class="form-control input-md"/>
+											<input id="contactPerson" name="contactPerson" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.contactPerson %>"/>
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="contactPersonNumber">國家親人電話</label>  
 										  <div class="col-md-2">
-											<input id="contactPersonNumber" name="contactPersonNumber" type="text" placeholder="" class="form-control input-md"/>
+											<input id="contactPersonNumber" name="contactPersonNumber" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.contactPersonNumber %>"/>
 										  </div>
 										</div>
 									</fieldset><br/>
@@ -604,7 +604,7 @@
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="selectbasic">渡假後安排</label>
 										  <div class="col-md-2">
-											<select id="selectbasic" name="selectbasic" class="form-control">
+											<select id="selectbasic" name="selectbasic" class="form-control" value="<%= application.domesticHelper.postRenewalArrangement %>">
 											  <option value="1">在履行新合約前返回原居地渡假</option>
 											  <option value="2">雙方同意把假期押後不超過一年</option>
 											</select>
@@ -612,19 +612,19 @@
 											
 										  <label class="col-md-1 control-label" for="tripStartDate">去程日期</label>  
 										  <div class="col-md-2">
-											<input id="tripStartDate" name="tripStartDate" type="text" placeholder="" class="form-control input-md"/>
+											<input id="tripStartDate" name="tripStartDate" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.tripStartDate %>"/>
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="tripEndDate">回程日期</label>  
 										  <div class="col-md-2">
-											<input id="tripEndDate" name="tripEndDate" type="text" placeholder="" class="form-control input-md"/>
+											<input id="tripEndDate" name="tripEndDate" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.tripEndDate %>"/>
 										  </div>
 										</div>
 										
 										<div class="col-md-12">										
 										  <label class="col-md-1 control-label" for="reason">原因</label>  
 										  <div class="col-md-8">
-											<input id="reason" name="reason" type="text" placeholder="" class="form-control input-md">
+											<input id="reason" name="reason" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.postRenewalPostponeReason %>">
 										  </div>
 										</div>
 									</fieldset><br/>
@@ -636,34 +636,34 @@
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="passportNumber">護照號碼</label>  
 										  <div class="col-md-2">
-											<input id="passportNumber" name="passportNumber" type="text" placeholder="" class="form-control input-md">
+											<input id="passportNumber" name="passportNumber" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.passportNumber %>">
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="issueCountry">簽發地點</label>  
 										  <div class="col-md-2">
-											<input id="issueCountry" name="issueCountry" type="text" placeholder="" class="form-control input-md"/>
+											<input id="issueCountry" name="issueCountry" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.passportIssueCountry %>"/>
 										  </div>
 
 										  <label class="col-md-1 control-label" for="issueDate">簽發日期</label>  
 										  <div class="col-md-2">
-											<input id="issueDate" name="issueDate" type="text" placeholder="" class="form-control input-md"/>
+											<input id="issueDate" name="issueDate" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.passportIssueDate %>"/>
 										  </div>
 										</div>
 
 										<div class="col-md-12">
 										  <label class="col-md-1 control-label" for="dueDate">屆滿日期</label>  
 										  <div class="col-md-2">
-											<input id="dueDate" name="dueDate" type="text" placeholder="" class="form-control input-md"/>
+											<input id="dueDate" name="dueDate" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.passportDueDate %>"/>
 										  </div>
 
 										  <label class="col-md-1 control-label" for="VISAStartDate">工作簽証生效日期</label>  
 										  <div class="col-md-2">
-											<input id="VISAStartDate" name="VISAStartDate" type="text" placeholder="" class="form-control input-md"/>
+											<input id="VISAStartDate" name="VISAStartDate" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.VISAIssueDate %>"/>
 										  </div>
 										  
 										  <label class="col-md-1 control-label" for="VISADueDate">工作簽証屆滿日期</label>  
 										  <div class="col-md-2">
-											<input id="VISADueDate" name="VISADueDate" type="text" placeholder="" class="form-control input-md"/>
+											<input id="VISADueDate" name="VISADueDate" type="text" placeholder="" class="form-control input-md" value="<%= application.domesticHelper.VISADueDate %>"/>
 										  </div>
 										</div>
 									</fieldset>

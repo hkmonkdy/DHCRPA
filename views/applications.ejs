@@ -156,22 +156,16 @@
 											</tr>
 										</thead>
 										<tbody>
+											<% for(var i=0; i<applications.length; i++) {%>
 											<tr>
-												<td class='clickable-row' data-href='application'>3326</td>
-												<td class='clickable-row' data-href='application'>Andy Wong</td>
-												<td class='clickable-row' data-href='application'>10/21/2013 3:29 PM</td>
+												<td class='clickable-row' data-href='application?applicationId=<%= applications[i]._id %>'><%= applications[i]._id %></td>
+												<td class='clickable-row' data-href='application?applicationId=<%= applications[i]._id %>'><%= applications[i].employer.firstName %> <%= applications[i].employer.lastName %></td>
+												<td class='clickable-row' data-href='application?applicationId=<%= applications[i]._id %>'><%= applications[i].updateOn %></td>
 												<td>
 													<a href="#" id="status1" data-type="select" data-pk="1" data-url="/post" data-title="Update Status">1 - Submitted</a>
 												</td>
 											</tr>
-											<tr>
-												<td class='clickable-row' data-href='application'>3325</td>
-												<td class='clickable-row' data-href='application'>Jevons</td>
-												<td class='clickable-row' data-href='application'>10/21/2013 3:20 PM</td>
-												<td>
-													<a href="#" id="status2" data-type="select" data-pk="1" data-url="/post" data-title="Update Status">3 - Confirmed</a>
-												</td>
-											</tr>
+											<% } %>
 										</tbody>
 									</table>
 								</div>
