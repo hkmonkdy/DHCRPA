@@ -161,8 +161,8 @@ app.get('/index', function(req, res){
     res.redirect('/');
 });  
 
-//app.get('/', restrict, function(req, res, controllerMongoDB){
-app.get('/', function(req, res){
+app.get('/', restrict, function(req, res, controllerMongoDB){
+//app.get('/', function(req, res){
   routeIndex.index(req, res, controllerMongoDB);
 });   
 
