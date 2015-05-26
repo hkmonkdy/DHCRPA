@@ -103,7 +103,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Inqury - 11</h1>
+                        <h1 class="page-header">Inquiry <span style="font-size: 16px"><i>[<%= inquiry._id %>]</i></span></h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -112,27 +112,32 @@
 				<div class="row">
                     <div class="col-lg-12">
 						<label class="col-md-2 control-labe2">姓名</label>  
-						<label class="col-md-2 control-labe2">Ms. Leung</label>
+						<label class="col-md-2 control-labe2"><%= inquiry.name %></label>
 					</div>
 						  
 					<div class="col-lg-12">
 						<label class="col-md-2 control-labe2">聯絡電話</label>  
-						<label class="col-md-2 control-labe2">98762435</label>
+						<label class="col-md-2 control-labe2"><%= inquiry.contactNumber %></label>
 					</div>
 					
 					<div class="col-lg-12">
 						<label class="col-md-2 control-labe2">電郵地址</label>  
-						<label class="col-md-2 control-labe2">peterLeung@gmail.com</label>
+						<label class="col-md-2 control-labe2"><%= inquiry.email %></label>
 					</div>
 					
 					<div class="col-lg-12">
 						<label class="col-md-2 control-labe2">標題</label>  
-						<label class="col-md-10 control-labe2">Inquiry about price</label>
+						<label class="col-md-10 control-labe2"><%= inquiry.title %></label>
 					</div>
 					
 					<div class="col-lg-12">
 						<label class="col-md-2 control-labe2">查詢內容</label>  
-						<label class="col-md-10 control-labe2">Will there be any discount if I apply contract renewal services with 2 helpers together?</label>
+						<label class="col-md-10 control-labe2"><%= inquiry.content %></label>
+					</div>
+					
+					<div class="col-lg-12">
+						<label class="col-md-2 control-labe2">查詢時間</label>  
+						<label class="col-md-10 control-labe2"><%= inquiry.createOn %></label>
 					</div>
                 </div>
                 <!-- /.row -->

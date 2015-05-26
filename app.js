@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var routeIndex = require('./routes/index');
-var routeApplications = require('./routes/applications');
 var routeApplication = require('./routes/application');
+var routeInquiry = require('./routes/inquiry');
 
 var controllerMongoDB = require('./controllers/mongoDB');
 
@@ -133,38 +133,40 @@ app.post('/login', function(req, res){
 
 
 
-app.get('/applications', function(req, res){                       
-  routeApplications.applications(req, res, controllerMongoDB);
+app.get('/applications', function(req, res){
+  routeApplication.applications(req, res, controllerMongoDB);
 });
 
-app.get('/application', function(req, res){                       
+app.get('/application', function(req, res){
   routeApplication.application(req, res, controllerMongoDB);
 });
 
-app.post('/updateApplicationStatus', function(req, res){                       
-  res.sendStatus(200);
-});
-
-app.post('/searchApplications', function(req, res){                       
+app.post('/searchApplications', function(req, res){
   routeApplication.application(req, res, controllerMongoDB);
 });
 
-app.get('/inquiries', function(req, res){                       
+app.post('/updateApplicationStatus', function(req, res){
+  routeIndex.changeApplicationStatus(req, res, controllerMongoDB);
+});
+
+app.get('/inquiries', function(req, res){
+  routeInquiry.inquiries(req, res, controllerMongoDB);
   res.render('inquiries');
 });
 
-app.get('/inquiry', function(req, res){                       
+app.get('/inquiry', function(req, res){
+  routeInquiry.inquiry(req, res, controllerMongoDB);
   res.render('inquiry');
 });
 
-app.get('/index', function(req, res){                      
+app.get('/index', function(req, res){
     res.redirect('/');
-});  
+});
 
 app.get('/', restrict, function(req, res){
 //app.get('/', function(req, res){
   routeIndex.index(req, res, controllerMongoDB);
-});   
+});
 
 app.listen(3001);                   
 console.log('Express started on port ' + 3001);

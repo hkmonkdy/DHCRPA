@@ -154,18 +154,14 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr class='clickable-row' data-href='inquiry'>
-												<td>11</td>
-												<td>Inquiry about price</td>
-												<td>Ms. Leung</td>
-												<td>10/21/2013 3:29 PM</td>
+											<% for(var i=0; i<inquiries.length; i++) {%>
+											<tr class='clickable-row' data-href='inquiry?inquiryId=<%= inquiries[i]._id %>'>
+												<td><%= inquiries[i]._id %></td>
+												<td><%= inquiries[i].subject %></td>
+												<td><%= inquiries[i].name %></td>
+												<td><%= inquiries[i].createOn %></td>
 											</tr>
-											<tr class='clickable-row' data-href='inquiry'>
-												<td>10</td>
-												<td>Processing Timing</td>
-												<td>Peter Chan</td>
-												<td>10/21/2013 3:20 PM</td>
-											</tr>
+											<% } %>
 										</tbody>
 									</table>
 								</div>

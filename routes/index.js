@@ -28,5 +28,5 @@ exports.index = function(req, res, controllerMongoDB){
 };
 
 exports.changeApplicationStatus = function(req, res, controllerMongoDB){
-  res.render('../views/index');
+  res.sendStatus(200);
 };
