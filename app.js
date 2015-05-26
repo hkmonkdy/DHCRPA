@@ -121,7 +121,7 @@ app.post('/login', function(req, res){
           + ' You may now access <a href="/restricted">/restricted</a>.';
 
 		res.locals.session = req.session;
-        res.render('index');
+        res.redirect('/');
       });                         
     } else {                      
       req.session.error = 'Authentication failed, please check your '                         
@@ -161,7 +161,7 @@ app.get('/index', function(req, res){
     res.redirect('/');
 });  
 
-app.get('/', restrict, function(req, res, controllerMongoDB){
+app.get('/', restrict, function(req, res){
 //app.get('/', function(req, res){
   routeIndex.index(req, res, controllerMongoDB);
 });   
