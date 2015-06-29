@@ -5,13 +5,13 @@ var Application = require('../models/application');
 var ApplicationInquiry = require('../models/application_inquiry');
 var GeneralInquiry = require('../models/general_inquiry');
 
-const APPLICATION_STATUS_NOT_SUBMITTED = 0;
-const APPLICATION_STATUS_SUBMITTED = 1;
-const APPLICATION_STATUS_EMAIL_SENT = 2;
-const APPLICATION_STATUS_CONFIRMED = 3;
+const APPLICATION_STATUS_CREATED = 1;
+const APPLICATION_STATUS_SUBMITTED = 2;
+const APPLICATION_STATUS_PAID = 3;
 const APPLICATION_STATUS_DOCUMENT_SENT = 4;
 const APPLICATION_STATUS_SIGNED = 5;
-const APPLICATION_STATUS_COMPLETED = 6;
+const APPLICATION_STATUS_READY_PICKUP = 6;
+const APPLICATION_STATUS_COMPLETED = 7;
 
 module.exports = {
 	getApplication: function (applicationId, next) {
@@ -53,13 +53,13 @@ module.exports = {
 				dbApplication.updateOn = Date.now();
 
 				dbApplication.save(function (err) {
-					return next(err);
+					return next(err, dbApplication);
 				});
 			});
 		}else{
 			var newApplication = new Application();
 
-			newApplication.statusId = APPLICATION_STATUS_NOT_SUBMITTED;
+			newApplication.statusId = APPLICATION_STATUS_CREATED;
 			newApplication.employer = submittedApplication.employer;
 			newApplication.domesticHelper = submittedApplication.domesticHelper;
 			

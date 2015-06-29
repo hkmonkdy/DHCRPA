@@ -110,7 +110,7 @@
                 <!-- /.row -->
 				
 				<form action="/application-save" method="post">
-					<input id="applicationId" name="applicationId" type="hidden"/>
+					<input id="applicationId" name="applicationId" type="hidden" value="<%= application._id %>"/>
 					
 					<div class="row">
 						<div class="col-lg-9">
@@ -314,20 +314,20 @@
 														</tr>
 													</thead>
 													<tbody>
-														<% for(var i=0; i<applications.employer.familyMembers.length; i++) { %>
+														<% for(var i=0; i<application.employer.familyMembers.length; i++) { %>
 														<tr>
 															<td>
-																<input id="familyMemberOrders" name="familyMemberOrders" type="hidden" value="<%= applications.employer.familyMembers[i].orderNum %>"/>
-																<input id="familyMemberNames" name="familyMemberNames" type="text" placeholder="" class="form-control input-md" value="<%= applications.employer.familyMembers[i].name %>"/>
+																<input id="familyMemberOrders" name="familyMemberOrders" type="hidden" value="<%= application.employer.familyMembers[i].orderNum %>"/>
+																<input id="familyMemberNames" name="familyMemberNames" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.familyMembers[i].name %>"/>
 															</td>
 															<td>
-																<input id="familyMemberBirthYears" name="familyMemberBirthYears" type="text" placeholder="" class="form-control input-md" value="<%= applications.employer.familyMembers[i].birthYear %>"/>
+																<input id="familyMemberBirthYears" name="familyMemberBirthYears" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.familyMembers[i].birthYear %>"/>
 															</td>
 															<td>
-																<input id="familyMemberRelationships" name="familyMemberRelationships" type="text" placeholder="" class="form-control input-md" value="<%= applications.employer.familyMembers[i].relationship %>"/>
+																<input id="familyMemberRelationships" name="familyMemberRelationships" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.familyMembers[i].relationship %>"/>
 															</td>
 															<td>
-																<input id="familyMemberHKIDs" name="familyMemberHKIDs" type="text" placeholder="" class="form-control input-md" value="<%= applications.employer.familyMembers[i].HKID %>"/>
+																<input id="familyMemberHKIDs" name="familyMemberHKIDs" type="text" placeholder="" class="form-control input-md" value="<%= application.employer.familyMembers[i].HKID %>"/>
 															</td>
 														</tr>
 														<% } %>
@@ -365,7 +365,7 @@
 														</tr>
 													</thead>
 													<tbody>
-														<% for(var i=0; i<applications.employer.employedDHs.length; i++) { %>
+														<% for(var i=0; i<application.employer.employedDHs.length; i++) { %>
 														<tr>
 															<td>
 																<input id="employedDHOrders" name="employedDHOrders" type="hidden" value="<%= application.employer.employedDHs.orderNum %>"/>

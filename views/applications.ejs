@@ -114,14 +114,15 @@
 							<input type="text" class="form-control" placeholder="Application #">
 						</div>
 						<div class="col-lg-2">
-							<select class="form-control">
-								<option>All Status</option>
-								<option>1 - Submitted</option>
-								<option>2 - Confirmation Sent</option>
-								<option>3 - Confirmed</option>
-								<option>4 - Document Sent</option>
-								<option>5 - Signed</option>
-								<option>6 - Completed</option>
+							<select class="form-control" id="statusId" name="statusId">
+								<option value="">All Status</option>
+								<option value="1">1 - Created</option>
+								<option value="2">2 - Submitted</option>
+								<option value="3">3 - Paid</option>
+								<option value="4">4 - Document Sent</option>
+								<option value="5">5 - Signed</option>
+								<option value="6">6 - Ready to Pick up</option>
+								<option value="7">7 - Completed</option>
 							</select>
 						</div>
 						<div class="col-lg-2">
@@ -204,24 +205,26 @@
 			$('#status1').editable({
 				value: 1,    
 				source: [
-				  {value: 1, text: '1 - Submitted'},
-				  {value: 2, text: '2 - Confirmation Sent'},
-				  {value: 3, text: '3 - Confirmed'},
+				  {value: 1, text: '1 - Created'},
+				  {value: 2, text: '2 - Submitted'},
+				  {value: 3, text: '3 - Paid'},
 				  {value: 4, text: '4 - Document Sent'},
 				  {value: 5, text: '5 - Signed'},
-				  {value: 6, text: '6 - Completed'}
+				  {value: 6, text: '6 - Ready to Pick up'},
+				  {value: 7, text: '7 - Completed'}
 			   ]
 			});
 			
 			$('#status2').editable({
 				value: 3,    
 				source: [
-				  {value: 1, text: '1 - Submitted'},
-				  {value: 2, text: '2 - Confirmation Sent'},
-				  {value: 3, text: '3 - Confirmed'},
+				  {value: 1, text: '1 - Created'},
+				  {value: 2, text: '2 - Submitted'},
+				  {value: 3, text: '3 - Paid'},
 				  {value: 4, text: '4 - Document Sent'},
 				  {value: 5, text: '5 - Signed'},
-				  {value: 6, text: '6 - Completed'}
+				  {value: 6, text: '6 - Ready to Pick up'},
+				  {value: 7, text: '7 - Completed'}
 			   ]
 			});
 		});

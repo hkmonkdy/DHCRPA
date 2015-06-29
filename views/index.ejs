@@ -118,13 +118,13 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><%=sizeOfSubmittedApplications%></div>
-                                    <div>New</div>
+                                    <div>Submitted</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="applications?statusId=1">
+                        <a href="applications?statusId=2">
                             <div class="panel-footer">
-                                <span class="pull-left">View New Applications</span>
+                                <span class="pull-left">View Submitted Applications</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -140,13 +140,13 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><%=sizeOfConfirmedApplications%></div>
-                                    <div>Confirmed</div>
+                                    <div>Paid</div>
                                 </div>
                             </div>
                         </div>
                         <a href="applications?statusId=3">
                             <div class="panel-footer">
-                                <span class="pull-left">View Confirmed Applications</span>
+                                <span class="pull-left">View Paid Applications</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -315,24 +315,26 @@
 			$('#status1').editable({
 				value: 1,    
 				source: [
-				  {value: 1, text: '1 - Submitted'},
-				  {value: 2, text: '2 - Confirmation Sent'},
-				  {value: 3, text: '3 - Confirmed'},
+				  {value: 1, text: '1 - Created'},
+				  {value: 2, text: '2 - Submitted'},
+				  {value: 3, text: '3 - Paid'},
 				  {value: 4, text: '4 - Document Sent'},
 				  {value: 5, text: '5 - Signed'},
-				  {value: 6, text: '6 - Completed'}
+				  {value: 6, text: '6 - Ready to Pick up'},
+				  {value: 7, text: '7 - Completed'}
 			   ]
 			});
 			
 			$('#status2').editable({
 				value: 3,    
 				source: [
-				  {value: 1, text: '1 - Submitted'},
-				  {value: 2, text: '2 - Confirmation Sent'},
-				  {value: 3, text: '3 - Confirmed'},
+				  {value: 1, text: '1 - Created'},
+				  {value: 2, text: '2 - Submitted'},
+				  {value: 3, text: '3 - Paid'},
 				  {value: 4, text: '4 - Document Sent'},
 				  {value: 5, text: '5 - Signed'},
-				  {value: 6, text: '6 - Completed'}
+				  {value: 6, text: '6 - Ready to Pick up'},
+				  {value: 7, text: '7 - Completed'}
 			   ]
 			});
 		});

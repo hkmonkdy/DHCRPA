@@ -3,7 +3,7 @@ const RECORD_LIMIT = 10;
 exports.index = function(req, res, controllerMongoDB){
   var sizeOfSubmittedApplications, sizeOfConfirmedApplications, sizeOfSignedApplications, inquiriedApplications;
 	
-  controllerMongoDB.getApplicationsByStatus(1, function(err, applications){
+  controllerMongoDB.getApplicationsByStatus(2, function(err, applications){
 	sizeOfSubmittedApplications = applications.length;
 	
 	controllerMongoDB.getApplicationsByStatus(3, function(err, applications){

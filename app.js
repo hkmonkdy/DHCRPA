@@ -141,8 +141,13 @@ app.get('/application', function(req, res){
   routeApplication.application(req, res, controllerMongoDB);
 });
 
+app.post('/application-save', function(req, res){
+	console.log("asdasdasdasddfasdfgfasdg");
+  routeApplication.saveApplication(req, res, controllerMongoDB);
+});
+
 app.post('/searchApplications', function(req, res){
-  routeApplication.application(req, res, controllerMongoDB);
+  routeApplication.applications(req, res, controllerMongoDB);
 });
 
 app.post('/updateApplicationStatus', function(req, res){
